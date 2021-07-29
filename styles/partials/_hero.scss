@@ -1,0 +1,14 @@
+.hero {
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
+    url("../../assets/Images/hero-bio.jpg") no-repeat;
+  background-size: cover;
+  height: 60vw;
+  width: 100vw;
+}
+
+.hero__title {
+  color: #fff;
+  font-size: 6vw;
+  padding-top: 27vw;
+  padding-left: 5vw;
+}
