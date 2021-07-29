@@ -18,22 +18,40 @@
 }
 
 .nav__list {
-  display: inline-flex;
+  display: flex;
   justify-content: space-around;
   list-style: none;
   font-size: 3rem;
 }
 
-.nav__link--selected {
-  font-weight: 700;
-  position: relative;
+.nav__item {
   display: flex;
-  width: auto;
-  border-bottom: 5px solid white;
-  padding-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .nav__link {
   color: #fff;
   text-decoration: none;
+  width: 100%;
+}
+
+.nav__link:active {
+  font-weight: 700;
+  border-bottom: 5px solid white;
+  width: 100%;
+  padding: 0 0 1rem 0;
+}
+
+.nav__link--first {
+  font-weight: 700;
+  border-bottom: 5px solid white;
+  width: 100%;
+  padding: 0 0 1rem 0;
+}
+
+.nav__link--second {
+  padding: 0 0 1rem 0;
 }
