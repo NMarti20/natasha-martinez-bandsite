@@ -1,19 +1,22 @@
 .footer {
   background-color: #323232;
-  font-size: 0.813rem;
+  font-weight: 400;
 }
 
 .primary {
+  font-size: 0.875rem;
   &__title {
     padding-top: 1.5rem;
     font-size: 1.5rem;
     padding-left: 1rem;
     padding-bottom: 1rem;
     color: #fff;
+    line-height: 1.125rem;
   }
 
   &__icons {
     display: flex;
+    padding: 0.5rem 0;
   }
 
   &__img {
@@ -62,6 +65,7 @@
 }
 
 .tertiary {
+  font-size: 0.875rem;
   color: #fff;
   padding: 0 0 1rem 1rem;
 }
