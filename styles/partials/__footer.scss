@@ -1,0 +1,62 @@
+.footer {
+  background-color: #323232;
+}
+
+.primary {
+  &__title {
+    padding-top: 1.5rem;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    color: #fff;
+  }
+
+  &__icons {
+    display: flex;
+  }
+
+  &__img {
+    padding-left: 1rem;
+    height: 1.5rem;
+  }
+  &__img--insta {
+    padding-left: 1.2rem;
+  }
+  &__img--face {
+    padding-left: 1.5rem;
+  }
+  &__img--twit {
+    padding-left: 1.5rem;
+  }
+
+  &__cont {
+    padding: 0 0 1rem 0;
+  }
+
+  &__cards {
+    padding: 0 0 0 1rem;
+  }
+
+  &__card {
+    padding: 0 0 1rem;
+  }
+
+  &__info--name {
+    font-weight: 600;
+  }
+
+  &__info {
+    color: #fff;
+    font-style: normal;
+    padding: 0 0 1rem 0;
+  }
+}
+
+.secondary {
+  padding: 0 0 1rem 1rem;
+}
+
+.tertiary {
+  color: #fff;
+  padding: 0 0 1rem 1rem;
+}
