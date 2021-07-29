@@ -4,11 +4,11 @@
   background-size: cover;
   height: 60vw;
   width: 100vw;
-}
 
-.hero__title {
-  color: #fff;
-  font-size: 1.5rem;
-  padding-top: 27vw;
-  padding-left: 5vw;
+  &__title {
+    color: #fff;
+    font-size: 1.5rem;
+    padding-top: 27vw;
+    padding-left: 5vw;
+  }
 }
