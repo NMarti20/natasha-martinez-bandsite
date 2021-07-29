@@ -37,20 +37,17 @@
   display: flex;
   flex-direction: column;
 }
-
 .nav__img-link {
   margin: 1rem 0;
   display: flex;
   justify-content: center;
 }
-
 .nav__list {
   display: flex;
   justify-content: space-around;
   list-style: none;
   font-size: 1rem;
 }
-
 .nav__item {
   display: flex;
   justify-content: center;
@@ -58,20 +55,17 @@
   text-align: center;
   width: 100%;
 }
-
 .nav__link {
   color: #fff;
   text-decoration: none;
   width: 100%;
 }
-
 .nav__link:active {
   font-weight: 700;
   border-bottom: 5px solid white;
   width: 100%;
   padding: 0 0 1rem 0;
 }
-
 .nav__link:hover {
   border-bottom: 4px solid #fff;
 }
@@ -214,7 +208,7 @@
 }
 
 .tertiary {
-  font-size: 0.875rem;
+  font-size: 0.625rem;
   color: #fff;
   padding: 0 0 1rem 1rem;
 }/*# sourceMappingURL=bio.css.map */
