@@ -1,7 +1,5 @@
-/*******************************
-HEADER SECTION
-*******************************/
-
-.header {
-  background-color: #323232;
-}
+@use './partials/resets' as *;
+@use './partials/header' as *;
+@use './partials/fonts' as *;
+@use './partials/hero' as *;
+@use './partials/about' as *;
