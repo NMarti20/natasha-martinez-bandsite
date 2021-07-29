@@ -1,5 +1,6 @@
 .footer {
   background-color: #323232;
+  font-size: 0.813rem;
 }
 
 .primary {
@@ -38,7 +39,7 @@
   }
 
   &__card {
-    padding: 0 0 1rem;
+    padding: 0 0 2rem 0;
   }
 
   &__info--name {
@@ -48,12 +49,16 @@
   &__info {
     color: #fff;
     font-style: normal;
-    padding: 0 0 1rem 0;
+    padding: 0 0 0.2rem;
+  }
+
+  &__info--email {
+    padding: 0;
   }
 }
 
 .secondary {
-  padding: 0 0 1rem 1rem;
+  padding: 2rem 0 1rem 1rem;
 }
 
 .tertiary {
