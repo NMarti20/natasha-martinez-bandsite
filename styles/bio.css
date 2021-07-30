@@ -287,7 +287,11 @@
   background-color: #323232;
   font-weight: 400;
   font-size: 0.875rem;
-  height: 50vw;
+}
+@media (min-width: 768px) {
+  .footer {
+    height: 50vw;
+  }
 }
 
 @media (min-width: 768px) {

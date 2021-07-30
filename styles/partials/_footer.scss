@@ -5,7 +5,10 @@
   background-color: #323232;
   font-weight: 400;
   font-size: 0.875rem;
-  height: 50vw;
+
+  @include tablet {
+    height: 50vw;
+  }
 }
 
 .primary {
