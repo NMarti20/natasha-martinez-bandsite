@@ -29,7 +29,8 @@
     padding: 0 1rem 1rem 1rem;
 
     @include tablet {
-      width: calc(33.333% - 2rem);
+      padding: 0.6rem 0.5rem;
+      width: calc(33.333% - 1rem);
       height: auto;
     }
   }
