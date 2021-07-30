@@ -72,9 +72,14 @@
       font-size: 1.5rem;
     }
   }
+
   &__info {
-    display: flex;
-    margin-left: 5rem;
+    margin-left: 0 1rem;
+
+    @include tablet {
+      display: flex;
+      margin: 0 2.5rem 0 5rem;
+    }
   }
 
   &__p {
@@ -88,10 +93,12 @@
     }
   }
 
-  &__p--second {
-    @include tablet {
-      margin-right: 4rem;
-    }
-  }
+  // &__p--second {
+  //   @include tablet {
+  //     margin-right: 4rem;
+  //     display: flex;
+  //     flex-direction: column;
+  //   }
+  // }
   margin-bottom: 1rem;
 }
