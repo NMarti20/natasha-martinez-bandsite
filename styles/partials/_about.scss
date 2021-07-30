@@ -1,20 +1,54 @@
+@use './mixins' as *;
+@use './variables' as *;
+
 .abt__title {
-  padding: 1.5rem 0 1rem 1rem;
+  padding: 2rem 0 1rem 1rem;
   font-size: 1.5rem;
+
+  @include tablet {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin: 1rem 0 0 1.5rem;
+  }
 }
 
 .music {
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__img {
     width: 100vw;
     height: 55vw;
     padding: 0 1rem 1rem 1rem;
+
+    @include tablet {
+      margin: 1rem 0 0 0;
+      align-self: center;
+      width: calc(85% - 2rem);
+      height: 43vw;
+    }
+  }
+
+  &__excerpt {
+    @include tablet {
+      text-align: left;
+      margin-left: 5rem;
+      margin-right: 4.5rem;
+    }
   }
 
   &__quote {
-    padding: 0 1rem 0.5rem 1rem;
+    padding: 0 1.3rem 0.5rem 1rem;
     font-weight: 600;
     line-height: 1.5rem;
     font-size: 0.875rem;
+
+    @include tablet {
+      font-size: 1.4rem;
+      line-height: 2rem;
+    }
   }
 
   &__cite {
@@ -22,17 +56,42 @@
     padding: 0 1rem 1rem 1rem;
     font-weight: 700;
     font-size: 0.875rem;
+
+    @include tablet {
+      font-size: 1rem;
+    }
   }
 
   &__title {
-    padding: 1rem 0 1rem 1rem;
+    padding: 1.75rem 0 1.2rem 1rem;
     font-size: 0.875rem;
     font-weight: 700;
+
+    @include tablet {
+      margin-left: 5rem;
+      font-size: 1.5rem;
+    }
+  }
+  &__info {
+    display: flex;
+    margin-left: 5rem;
   }
 
   &__p {
     padding: 0 1rem 1rem 1rem;
     font-size: 0.813rem;
     line-height: 1.125rem;
+
+    @include tablet {
+      margin-right: 2rem;
+      line-height: 1.4rem;
+    }
   }
+
+  &__p--second {
+    @include tablet {
+      margin-right: 4rem;
+    }
+  }
+  margin-bottom: 1rem;
 }
