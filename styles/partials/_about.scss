@@ -3,33 +3,36 @@
   font-size: 1.5rem;
 }
 
-.music__img {
-  width: 100vw;
-  height: 55vw;
-  padding: 0 1rem 1rem 1rem;
-}
-.music__quote {
-  padding: 0 1rem 0.5rem 1rem;
-  font-weight: 600;
-  line-height: 1.5rem;
-  font-size: 0.875rem;
-}
+.music {
+  &__img {
+    width: 100vw;
+    height: 55vw;
+    padding: 0 1rem 1rem 1rem;
+  }
 
-.music__cite {
-  color: #323232;
-  padding: 0 1rem 1rem 1rem;
-  font-weight: 700;
-  font-size: 0.875rem;
-}
+  &__quote {
+    padding: 0 1rem 0.5rem 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    font-size: 0.875rem;
+  }
 
-.music__title {
-  padding: 1rem 0 1rem 1rem;
-  font-size: 0.875rem;
-  font-weight: 700;
-}
+  &__cite {
+    color: #323232;
+    padding: 0 1rem 1rem 1rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
 
-.music__p {
-  padding: 0 1rem 1rem 1rem;
-  font-size: 0.813rem;
-  line-height: 1.125rem;
+  &__title {
+    padding: 1rem 0 1rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  &__p {
+    padding: 0 1rem 1rem 1rem;
+    font-size: 0.813rem;
+    line-height: 1.125rem;
+  }
 }
