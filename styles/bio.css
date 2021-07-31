@@ -291,6 +291,7 @@
 @media (min-width: 768px) {
   .footer {
     height: 50vw;
+    position: relative;
   }
 }
 
@@ -318,8 +319,8 @@
 @media (min-width: 768px) {
   .primary__icons {
     position: absolute;
-    top: 134.6rem;
-    left: 15.7rem;
+    top: 3.5rem;
+    left: 16rem;
   }
 }
 .primary__img {
@@ -389,8 +390,8 @@
 @media (min-width: 768px) {
   .primary__logo {
     position: absolute;
-    top: 133.4rem;
-    right: 2.5rem;
+    top: 2.2rem;
+    right: 2rem;
   }
 }
 .primary__copyright {
@@ -401,10 +402,9 @@
 @media (min-width: 768px) {
   .primary__copyright {
     position: absolute;
-    top: 151.6rem;
-    left: 2rem;
     font-size: 0.875rem;
     font-weight: 400;
     padding: 0;
+    top: 20.5rem;
   }
 }/*# sourceMappingURL=bio.css.map */
