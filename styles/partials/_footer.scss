@@ -8,6 +8,7 @@
 
   @include tablet {
     height: 50vw;
+    position: relative;
   }
 }
 
@@ -33,8 +34,8 @@
 
     @include tablet {
       position: absolute;
-      top: 134.6rem;
-      left: 15.7rem;
+      top: 3.5rem;
+      left: 16rem;
     }
   }
 
@@ -106,8 +107,8 @@
 
     @include tablet {
       position: absolute;
-      top: 133.4rem;
-      right: 2.5rem;
+      top: 2.2rem;
+      right: 2rem;
     }
   }
 
@@ -118,11 +119,10 @@
 
     @include tablet {
       position: absolute;
-      top: 151.6rem;
-      left: 2rem;
       font-size: 0.875rem;
       font-weight: 400;
       padding: 0;
+      top: 20.5rem;
     }
   }
 }
