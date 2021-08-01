@@ -28,6 +28,8 @@
   }
 
   &__img {
+    filter: grayscale(100%);
+
     width: 100vw;
     height: 55vw;
     padding: 0 1rem 1rem 1rem;
@@ -43,5 +45,10 @@
     @include desktop {
       margin: 0 6.5rem;
     }
+  }
+
+  &__img:hover {
+    filter: none;
+    transition-delay: 0.1s;
   }
 }

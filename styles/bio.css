@@ -308,7 +308,7 @@
 @media (min-width: 768px) {
   .photos__title {
     font-size: 2.25rem;
-    margin: 1rem 0 0 2.7rem;
+    margin: 1rem 0 0 1rem;
   }
 }
 @media (min-width: 1280px) {
