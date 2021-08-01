@@ -10,6 +10,10 @@
     height: 50vw;
     position: relative;
   }
+
+  @include desktop {
+    height: 30vw;
+  }
 }
 
 .primary {
@@ -36,6 +40,12 @@
       position: absolute;
       top: 3.5rem;
       left: 16rem;
+    }
+
+    @include desktop {
+      position: absolute;
+      top: 3.5rem;
+      left: 23rem;
     }
   }
 
@@ -110,6 +120,12 @@
       top: 2.2rem;
       right: 2rem;
     }
+
+    @include desktop {
+      position: absolute;
+      top: 2.2rem;
+      right: 8rem;
+    }
   }
 
   &__copyright {
@@ -124,5 +140,9 @@
       padding: 0;
       top: 20.5rem;
     }
+  }
+
+  @include desktop {
+    margin-left: 7rem;
   }
 }
