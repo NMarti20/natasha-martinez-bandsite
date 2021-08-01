@@ -10,6 +10,10 @@
     font-weight: 600;
     margin: 1rem 0 0 1.5rem;
   }
+
+  @include desktop {
+    margin-left: 7rem;
+  }
 }
 
 .music {
@@ -29,6 +33,11 @@
       width: calc(85% - 2rem);
       height: 43vw;
     }
+
+    @include desktop {
+      align-self: center;
+      width: calc(70% - 2rem);
+    }
   }
 
   &__excerpt {
@@ -36,6 +45,12 @@
       text-align: left;
       margin-left: 5rem;
       margin-right: 4.5rem;
+    }
+
+    @include desktop {
+      margin-left: 13rem;
+      margin-right: 24rem;
+      text-align: left;
     }
   }
 
@@ -71,6 +86,10 @@
       margin-left: 5rem;
       font-size: 1.5rem;
     }
+
+    @include desktop {
+      margin-left: 13rem;
+    }
   }
 
   &__info {
@@ -79,6 +98,11 @@
     @include tablet {
       display: flex;
       margin: 0 2.5rem 0 5rem;
+    }
+
+    @include desktop {
+      margin-left: 13rem;
+      margin-right: 11rem;
     }
   }
 
