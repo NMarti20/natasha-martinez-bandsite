@@ -42,4 +42,12 @@ HERO FOR SHOWS
     width: 100%;
     height: 20vw;
   }
+
+  &__title {
+    @extend .hero__title;
+  }
+
+  &__song {
+    @extend .hero__title;
+  }
 }

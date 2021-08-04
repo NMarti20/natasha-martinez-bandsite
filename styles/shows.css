@@ -149,7 +149,7 @@
     height: 59vw;
   }
 }
-.hero__title {
+.hero__title, .hero-shows__song, .hero-shows__title {
   color: #fff;
   font-size: 1.5rem;
   display: flex;
@@ -157,7 +157,7 @@
   padding-left: 5vw;
 }
 @media (min-width: 768px) {
-  .hero__title {
+  .hero__title, .hero-shows__song, .hero-shows__title {
     font-size: 4rem;
     font-weight: 600;
   }
@@ -175,7 +175,6 @@ HERO FOR SHOWS
   width: 100%;
   height: 20vw;
 }
-
 .abt__title {
   padding: 2rem 0 1rem 1rem;
   font-size: 1.5rem;
