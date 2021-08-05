@@ -64,20 +64,14 @@ let shows = [
 
 */
 
-const showsList = document.querySelector(".shows-list");
+const showsList = document.querySelector(".show");
 
 // function showsDisplay(showsData) {
+//create article tag and add class name
 
-shows.forEach((item) => {
-  //TEST
-  //   console.log("test:", item.date);
-  //   console.log("test:", item.venue);
-  //   console.log("test:", item.location);
-  //create article tag and add class name
-
-  const showsElement = document.createElement("article");
-  showsElement.classList.add("shows");
-
+// const showsElement = document.createElement("article");
+// showsElement.classList.add("shows");
+const showsContent = shows.forEach((item) => {
   //to append showsElement with the main div from HTML
   // showsList.appendChild(showsElement);
 
@@ -85,7 +79,11 @@ shows.forEach((item) => {
   const showsContainer = document.createElement("div");
   showsContainer.classList.add("shows__container");
 
-  showsElement.appendChild(showsContainer);
+  showsList.appendChild(showsContainer);
+  //TEST
+  //   console.log("test:", item.date);
+  //   console.log("test:", item.venue);
+  //   console.log("test:", item.location);
 
   /**************
    SHOWS DATES
@@ -156,6 +154,13 @@ shows.forEach((item) => {
 
   showsLocation.appendChild(showsLocationName);
 
-  console.log(showsElement);
+  //create button
+  const btn = document.createElement("button");
+  btn.classList.add("shows__btn");
+  btn.innerText = "BUY TICKETS";
+
+  showsContainer.appendChild(btn);
+
+  // return showsContainer;
   console.log(showsContainer);
 });
