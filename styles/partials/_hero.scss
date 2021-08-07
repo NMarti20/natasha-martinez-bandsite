@@ -40,21 +40,44 @@ HERO FOR SHOWS
   flex-direction: column;
   height: 75%;
 
+  @include tablet {
+    height: 63vw;
+    background-position: center;
+  }
+
   &__title {
     @extend .hero__title;
     font-weight: 400;
-    font-size: 0.875rem;
-    margin: 2rem 0 1rem 0;
+    font-size: 0.85rem;
+    margin: 3rem 0 1rem 0;
+
+    @include tablet {
+      font-size: 1.53rem;
+      padding-top: 1rem;
+      margin-bottom: 0;
+    }
   }
 
   &__song {
     @extend .hero__title;
     font-weight: 600;
     margin: 0 0 1rem 0;
+
+    @include tablet {
+      font-size: 3.7rem;
+      padding-top: 0.5rem;
+    }
   }
 }
 
 iframe {
   margin: 0 1rem 2rem 1rem;
   height: 30vw;
+
+  @include tablet {
+    height: 25%;
+    width: 50%;
+    margin-top: 1.5rem;
+    margin-left: 2.5rem;
+  }
 }
