@@ -38,7 +38,7 @@ HERO FOR SHOWS
   background-size: cover;
   display: flex;
   flex-direction: column;
-  height: 85vw;
+  height: 75%;
 
   &__title {
     @extend .hero__title;
@@ -55,6 +55,6 @@ HERO FOR SHOWS
 }
 
 iframe {
-  margin: 0 1rem;
+  margin: 0 1rem 2rem 1rem;
   height: 30vw;
 }
