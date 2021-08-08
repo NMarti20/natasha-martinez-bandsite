@@ -1,15 +1,46 @@
+@use './variables' as *;
+@use './mixins' as *;
+
 .shows {
   display: flex;
   flex-direction: column;
   margin: 0 0 0 1rem;
 
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__title {
     font-size: 2.25rem;
     padding: 1rem 1rem 1rem 0;
+
+    @include tablet {
+      padding-left: 1.5rem;
+    }
+
+    @include desktop {
+      padding-left: 5rem;
+    }
   }
 
   &__container {
     padding: 0 1rem 1rem 0;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+
+      border-bottom: 1px solid #e1e1e1;
+      justify-content: space-between;
+      margin: 1rem 1.5rem 0 1.5rem;
+      padding: 0;
+    }
+
+    @include desktop {
+      margin-left: 20rem;
+      margin-right: 8rem;
+    }
   }
 
   &__dates {
@@ -38,9 +69,19 @@
     margin: 0 0 0.5rem 0;
   }
 
+  &__venue-name {
+    @include tablet {
+      font-size: 0.9rem;
+    }
+  }
+
   &__location {
     font-size: 0.813rem;
     margin: 0 0 1rem 0;
+
+    @include tablet {
+      margin: 0;
+    }
   }
 
   &__location-title {
@@ -51,6 +92,9 @@
 
   &__location-name {
     font-size: 0.9rem;
+    @include tablet {
+      margin: 0;
+    }
   }
 
   &__btn {
@@ -63,10 +107,92 @@
     height: 12.5vw;
     margin: 0 0 1rem 0;
     border-radius: 4px;
+
+    @include tablet {
+      width: 20%;
+      height: 5vw;
+      margin-top: 0.5rem;
+    }
+
+    @include desktop {
+      width: 18%;
+      height: 3.4vw;
+    }
   }
 
   &__divider {
     color: #e1e1e1;
     stroke-width: 1px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+//This is for the first line of shows for tablet
+@include tablet {
+  .shows__container:nth-child(2) > .shows__dates > .shows__dates-title {
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+  }
+  .shows__container:nth-child(2) > .shows__venue > .shows__venue-title {
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+  }
+  .shows__container:nth-child(2) > .shows__location > .shows__location-title {
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+  }
+  .shows__container:nth-child(2) > .shows__btn {
+    margin-top: 1.6rem;
+  }
+}
+
+//This is for the first line of shows for desktop
+
+@include desktop {
+  .shows__container:nth-child(2) > .shows__dates > .shows__dates-title {
+    margin-bottom: 3rem;
+  }
+  .shows__container:nth-child(2) > .shows__venue > .shows__venue-title {
+    margin-bottom: 3rem;
+  }
+  .shows__container:nth-child(2) > .shows__location > .shows__location-title {
+    margin-bottom: 3rem;
+  }
+
+  .shows__container:nth-child(2) > .shows__btn {
+    margin-top: 3rem;
+  }
+}
+
+//this is will to hide titles
+
+@include tablet {
+  .shows__container:nth-child(n + 3) > .shows__dates > .shows__dates-title {
+    display: none;
+  }
+  .shows__container:nth-child(n + 3) > .shows__venue > .shows__venue-title {
+    display: none;
+  }
+  .shows__container:nth-child(n + 3)
+    > .shows__location
+    > .shows__location-title {
+    display: none;
+  }
+
+  .shows__container:nth-child(n + 3) > .shows__dates > .shows__dates-day {
+    margin-top: 1rem;
+  }
+
+  .shows__container:nth-child(n + 3) > .shows__venue > .shows__venue-name {
+    margin-top: 1rem;
+  }
+
+  .shows__container:nth-child(n + 3)
+    > .shows__location
+    > .shows__location-name {
+    margin-top: 1rem;
   }
 }
