@@ -21,6 +21,10 @@
 
     @include desktop {
       padding-left: 5rem;
+      position: absolute;
+      top: 80;
+      left: 0;
+      padding-top: 3rem;
     }
   }
 
@@ -40,6 +44,7 @@
     @include desktop {
       margin-left: 20rem;
       margin-right: 8rem;
+      position: relative;
     }
   }
 
@@ -153,17 +158,17 @@
 
 @include desktop {
   .shows__container:nth-child(2) > .shows__dates > .shows__dates-title {
-    margin-bottom: 3rem;
+    margin: 3rem 0;
   }
   .shows__container:nth-child(2) > .shows__venue > .shows__venue-title {
-    margin-bottom: 3rem;
+    margin: 3rem 0;
   }
   .shows__container:nth-child(2) > .shows__location > .shows__location-title {
-    margin-bottom: 3rem;
+    margin: 3rem 0;
   }
 
   .shows__container:nth-child(2) > .shows__btn {
-    margin-top: 3rem;
+    margin-top: 6rem;
   }
 }
 
@@ -194,5 +199,9 @@
     > .shows__location
     > .shows__location-name {
     margin-top: 1rem;
+  }
+
+  .shows__container:nth-child(7) {
+    margin-bottom: 2rem;
   }
 }
