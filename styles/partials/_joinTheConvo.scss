@@ -94,6 +94,10 @@
     }
   }
 
+  &__name-insert:focus {
+    @include textOutline;
+  }
+
   &__comment {
     color: #afafaf;
     font-size: 0.625rem;
@@ -131,6 +135,10 @@
     }
   }
 
+  &__comment-insert:focus {
+    @include textOutline;
+  }
+
   &__comment-insert::placeholder {
     color: #323232;
     padding-top: 0.5rem;
@@ -163,6 +171,12 @@
       margin-left: 23.5rem;
     }
   }
+}
+
+//validation error colors
+
+.comments__validate {
+  border: 1px solid red;
 }
 
 /**********************

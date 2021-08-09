@@ -121,13 +121,36 @@ commentsForm.addEventListener("submit", (event) => {
   const commentInsert = event.target.comment.value;
   console.log(commentInsert);
 
-  //validate errors
+  //validate errors, doesn't post while empty
+  if (nameInsert === "") {
+    const textValidate = document.querySelector(".comments__name-insert");
+    textValidate.classList.add("comments__validate");
+
+    return false;
+  }
+
+  if (commentInsert === "") {
+    const textValidate = document.querySelector(".comments__comment-insert");
+    textValidate.classList.add("comments__validate");
+
+    return false;
+  }
+
+  // grab current date
+
+  let formatDate =
+    "0" +
+    new Date(Date.now()).getMonth() +
+    "/" +
+    "0" +
+    new Date(Date.now()).getDate() +
+    "/" +
+    new Date(Date.now()).getFullYear();
 
   //new comment
-
   let newComment = {
     name: nameInsert,
-    date: new Date(Date.now()),
+    date: formatDate,
     comment: commentInsert,
     img: "",
   };
