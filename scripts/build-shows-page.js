@@ -64,7 +64,7 @@ let shows = [
 
 */
 
-const showsList = document.querySelector(".show");
+const showsList = document.querySelector(".shows");
 
 // function showsDisplay(showsData) {
 //create article tag and add class name
@@ -97,7 +97,7 @@ const showsContent = shows.forEach((item) => {
   //create shows__dates-title elements class, and appendChild to showsDates
   const showsDatesTitle = document.createElement("h3");
   showsDatesTitle.classList.add("shows__dates-title");
-  showsDatesTitle.innerText = "Dates";
+  showsDatesTitle.innerText = "DATES";
 
   showsDates.appendChild(showsDatesTitle);
 
@@ -120,7 +120,7 @@ const showsContent = shows.forEach((item) => {
   //create shows__venue-title elements, class and appendchild to showsVenue
   const showsVenueTitle = document.createElement("h3");
   showsVenueTitle.classList.add("shows__venue-title");
-  showsVenueTitle.innerText = "Venue";
+  showsVenueTitle.innerText = "VENUE";
 
   showsVenue.appendChild(showsVenueTitle);
 
@@ -143,7 +143,7 @@ const showsContent = shows.forEach((item) => {
   //create shows__location-title element, class and appendChild
   const showsLocationTitle = document.createElement("h3");
   showsLocationTitle.classList.add("shows__location-title");
-  showsLocationTitle.innerText = "Location";
+  showsLocationTitle.innerText = "LOCATION";
 
   showsLocation.appendChild(showsLocationTitle);
 
@@ -161,6 +161,11 @@ const showsContent = shows.forEach((item) => {
 
   showsContainer.appendChild(btn);
 
+  //hr tag
+  const showsDivider = document.createElement("hr");
+  showsDivider.classList.add("shows__divider");
+
+  showsContainer.appendChild(showsDivider);
   // return showsContainer;
-  console.log(showsContainer);
+  // console.log(showsContainer);
 });

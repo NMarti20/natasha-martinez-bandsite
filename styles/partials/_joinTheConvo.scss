@@ -5,6 +5,15 @@
   &__title {
     padding: 1.5rem 0 1.5rem 0.5rem;
     font-size: 1.5rem;
+
+    @include tablet {
+      font-size: 2.25rem;
+      margin: 1rem 0 0 1rem;
+    }
+
+    @include desktop {
+      margin-left: 8rem;
+    }
   }
 
   &__img {
@@ -13,6 +22,16 @@
     border-radius: 50%;
     margin: 1rem 1rem 0 1rem;
     position: absolute;
+
+    @include tablet {
+      width: 3rem;
+      height: 3rem;
+      margin-left: 6rem;
+    }
+
+    @include desktop {
+      margin-left: 23.5rem;
+    }
   }
 
   &__form {
@@ -20,6 +39,15 @@
     flex-direction: column;
     border-bottom: 1px solid #afafaf;
     margin: 0 0.75rem;
+
+    @include tablet {
+      margin: 0 5.5rem;
+    }
+
+    @include desktop {
+      margin-left: 23.5rem;
+      margin-right: 25rem;
+    }
   }
 
   &__name {
@@ -27,22 +55,44 @@
     font-size: 0.625rem;
     margin-left: 4rem;
     margin-bottom: 0.25rem;
+
+    @include tablet {
+      font-size: 0.8rem;
+      margin-left: 5.5rem;
+    }
+    @include desktop {
+      margin-left: 4.5rem;
+    }
   }
 
   &__name-insert {
-    height: 36px;
+    height: 2.25rem;
     width: 80%;
     margin-left: 3.5rem;
     margin-bottom: 1rem;
     border-color: #e1e1e1;
     border-radius: 4px;
     resize: none;
+
+    @include tablet {
+      height: 3rem;
+      margin-left: 5.5rem;
+      width: 85%;
+    }
+    @include desktop {
+      margin-left: 4.5rem;
+    }
   }
 
   &__name-insert::placeholder {
     color: #323232;
     padding-top: 0.5rem;
     padding-left: 0.5rem;
+
+    @include tablet {
+      padding-top: 1rem;
+      padding-left: 1rem;
+    }
   }
 
   &__comment {
@@ -50,10 +100,19 @@
     font-size: 0.625rem;
     margin-left: 4rem;
     margin-bottom: 0.25rem;
+
+    @include tablet {
+      font-size: 0.8rem;
+      margin-left: 5.5rem;
+    }
+
+    @include desktop {
+      margin-left: 4.5rem;
+    }
   }
 
   &__comment-insert {
-    height: 36px;
+    height: 2.25rem;
     width: 80%;
     margin-left: 3.5rem;
     height: 30vw;
@@ -61,12 +120,26 @@
     border-color: #e1e1e1;
     border-radius: 4px;
     resize: none;
+
+    @include tablet {
+      height: 6rem;
+      margin-left: 5.5rem;
+      width: 85%;
+    }
+
+    @include desktop {
+      margin-left: 4.5rem;
+    }
   }
 
   &__comment-insert::placeholder {
     color: #323232;
     padding-top: 0.5rem;
     padding-left: 0.5rem;
+    @include tablet {
+      padding-top: 1rem;
+      padding-left: 1rem;
+    }
   }
 
   &__btn {
@@ -80,6 +153,16 @@
     background-color: #323232;
     border-style: hidden;
     border-radius: 4px;
+
+    @include tablet {
+      width: 25%;
+      margin-left: 25.6rem;
+      margin-top: 1rem;
+    }
+
+    @include desktop {
+      margin-left: 23.5rem;
+    }
   }
 }
 
@@ -91,6 +174,19 @@ COMMENTS POSTED
   &__posted {
     margin-bottom: 1rem;
     padding-top: 0;
+
+    @include tablet {
+      margin: 0 4.5rem 2rem 4.5rem;
+    }
+
+    @include desktop {
+      margin-left: 22.5rem;
+      margin-right: 24rem;
+    }
+  }
+
+  &__pic-container {
+    height: 0;
   }
   &__posted-user-img {
     height: 36px;
@@ -98,11 +194,24 @@ COMMENTS POSTED
     background-color: #e1e1e1;
     border-radius: 50%;
     border: 0;
-    position: relative;
-    top: 2rem;
-    left: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+
+    @include tablet {
+      width: 3rem;
+      height: 3rem;
+      display: inline-flex;
+      margin-top: 2rem;
+    }
   }
 
+  &__container {
+    margin-top: 1rem;
+
+    @include tablet {
+      margin-top: 2rem;
+    }
+  }
   &__name-date-container {
     display: flex;
     justify-content: space-between;
@@ -114,6 +223,11 @@ COMMENTS POSTED
     font-size: 0.813rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
+
+    @include tablet {
+      margin-left: 5rem;
+      font-size: 0.9rem;
+    }
   }
   &__user-comment {
     margin-left: 4rem;
@@ -121,12 +235,23 @@ COMMENTS POSTED
     font-size: 0.813rem;
     line-height: 1rem;
     margin-bottom: 1rem;
+
+    @include tablet {
+      margin-left: 5rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      line-height: 1.5rem;
+    }
   }
 
   &__date-posted {
     color: #afafaf;
     font-size: 0.813rem;
     margin-right: 1.2rem;
+
+    @include tablet {
+      font-size: 0.9rem;
+    }
   }
 
   &__divider {

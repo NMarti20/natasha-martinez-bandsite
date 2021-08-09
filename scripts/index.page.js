@@ -29,20 +29,20 @@ let comments = [
 const commentsPosted = document.querySelector(".comments__posted");
 
 const commentsContent = comments.forEach(function displayComments(item) {
+  //create img div
+
+  const commentsPicContainer = document.createElement("div");
+  commentsPicContainer.classList.add("comments__pic-container");
+
+  commentsPosted.appendChild(commentsPicContainer);
+
   //create img
   const commentsPostedUserImg = document.createElement("img");
   commentsPostedUserImg.classList.add("comments__posted-user-img");
-  commentsPostedUserImg.src = item.image;
-  commentsPostedUserImg.alt = "user image";
+  // commentsPostedUserImg.src = item.image;
+  // commentsPostedUserImg.alt = "user image";
 
-  commentsPosted.appendChild(commentsPostedUserImg);
-
-  //create date
-  const commentsDatePosted = document.createElement("p");
-  commentsDatePosted.classList.add("comments__date-posted");
-  commentsDatePosted.innerText = item.date;
-
-  commentsPosted.appendChild(commentsDatePosted);
+  commentsPicContainer.appendChild(commentsPostedUserImg);
 
   //create comments__Container element, class and appendChild to commentsContainer
   const commentsContainer = document.createElement("div");
@@ -50,12 +50,25 @@ const commentsContent = comments.forEach(function displayComments(item) {
 
   commentsPosted.appendChild(commentsContainer);
 
+  //create div for name and date
+  const nameDateContainer = document.createElement("div");
+  nameDateContainer.classList.add("comments__name-date-container");
+
+  commentsContainer.appendChild(nameDateContainer);
+
   //create comments__user-name element, class and appendChild to commentsPosted
   const commentsUserName = document.createElement("p");
   commentsUserName.classList.add("comments__user-name");
   commentsUserName.innerText = item.name;
 
-  commentsContainer.appendChild(commentsUserName);
+  nameDateContainer.appendChild(commentsUserName);
+
+  //create date
+  const commentsDatePosted = document.createElement("p");
+  commentsDatePosted.classList.add("comments__date-posted");
+  commentsDatePosted.innerText = item.date;
+
+  nameDateContainer.appendChild(commentsDatePosted);
 
   //create comments__user-comment element, class and appendChild to commentsPosted
   const commentsUserComment = document.createElement("p");
@@ -63,6 +76,12 @@ const commentsContent = comments.forEach(function displayComments(item) {
   commentsUserComment.innerText = item.comment;
 
   commentsContainer.appendChild(commentsUserComment);
+
+  //hr tag
+  const commentsDivider = document.createElement("hr");
+  commentsDivider.classList.add("comments__divider");
+
+  commentsPosted.appendChild(commentsDivider);
 });
 
 console.log(commentsPosted);
