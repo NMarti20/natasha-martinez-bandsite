@@ -169,3 +169,17 @@ const showsContent = shows.forEach((item) => {
   // return showsContainer;
   // console.log(showsContainer);
 });
+
+//when i click on buy tickets button it consoles venue and location
+const buyTicketBtn = document.querySelectorAll(".shows__btn");
+
+const generateShows = (shows) => {
+  for (let i = 0; i < shows.length; i++) {
+    buyTicketBtn[i].addEventListener("click", () => {
+      console.log(shows[i].venue);
+      console.log(shows[i].location);
+    });
+  }
+};
+
+generateShows(shows);
