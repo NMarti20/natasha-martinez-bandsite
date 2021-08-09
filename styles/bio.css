@@ -124,6 +124,7 @@
   .nav__link--first {
     padding: 0.8rem 0 1.3rem 0;
     border-bottom: 3px solid white;
+    margin-top: 0.4rem;
   }
 }
 
@@ -133,7 +134,7 @@
 }
 @media (min-width: 768px) {
   .nav__link--second {
-    padding: 0.4rem 0 1.3rem 0;
+    padding: 0.8rem 0 1.3rem 0;
   }
 }
 
@@ -457,7 +458,6 @@ iframe {
 .comments__form {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #afafaf;
   margin: 0 0.75rem;
 }
 @media (min-width: 768px) {
@@ -474,7 +474,7 @@ iframe {
 .comments__name {
   color: #afafaf;
   font-size: 0.625rem;
-  margin-left: 4rem;
+  margin-left: 3.5rem;
   margin-bottom: 0.25rem;
 }
 @media (min-width: 768px) {
@@ -541,7 +541,7 @@ iframe {
 .comments__comment {
   color: #afafaf;
   font-size: 0.625rem;
-  margin-left: 4rem;
+  margin-left: 3.5rem;
   margin-bottom: 0.25rem;
 }
 @media (min-width: 768px) {

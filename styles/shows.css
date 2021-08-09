@@ -124,6 +124,7 @@
   .nav__link--first {
     padding: 0.8rem 0 1.3rem 0;
     border-bottom: 3px solid white;
+    margin-top: 0.4rem;
   }
 }
 
@@ -133,7 +134,7 @@
 }
 @media (min-width: 768px) {
   .nav__link--second {
-    padding: 0.4rem 0 1.3rem 0;
+    padding: 0.8rem 0 1.3rem 0;
   }
 }
 

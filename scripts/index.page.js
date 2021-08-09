@@ -28,13 +28,18 @@ let comments = [
 
 const commentsPosted = document.querySelector(".comments__posted");
 
-const commentsContent = comments.forEach(function displayComments(item) {
+const commentsOutline = (commentsData) => {
+  const listedCommentsSection = document.createElement("section");
+  listedCommentsSection.classList.add("comments__listed-section");
+
+  commentsPosted.appendChild(listedCommentsSection);
+
   //create img div
 
   const commentsPicContainer = document.createElement("div");
   commentsPicContainer.classList.add("comments__pic-container");
 
-  commentsPosted.appendChild(commentsPicContainer);
+  listedCommentsSection.appendChild(commentsPicContainer);
 
   //create img
   const commentsPostedUserImg = document.createElement("img");
@@ -48,7 +53,7 @@ const commentsContent = comments.forEach(function displayComments(item) {
   const commentsContainer = document.createElement("div");
   commentsContainer.classList.add("comments__container");
 
-  commentsPosted.appendChild(commentsContainer);
+  listedCommentsSection.appendChild(commentsContainer);
 
   //create div for name and date
   const nameDateContainer = document.createElement("div");
@@ -59,21 +64,21 @@ const commentsContent = comments.forEach(function displayComments(item) {
   //create comments__user-name element, class and appendChild to commentsPosted
   const commentsUserName = document.createElement("p");
   commentsUserName.classList.add("comments__user-name");
-  commentsUserName.innerText = item.name;
+  commentsUserName.innerText = commentsData.name;
 
   nameDateContainer.appendChild(commentsUserName);
 
   //create date
   const commentsDatePosted = document.createElement("p");
   commentsDatePosted.classList.add("comments__date-posted");
-  commentsDatePosted.innerText = item.date;
+  commentsDatePosted.innerText = commentsData.date;
 
   nameDateContainer.appendChild(commentsDatePosted);
 
   //create comments__user-comment element, class and appendChild to commentsPosted
   const commentsUserComment = document.createElement("p");
   commentsUserComment.classList.add("comments__user-comment");
-  commentsUserComment.innerText = item.comment;
+  commentsUserComment.innerText = commentsData.comment;
 
   commentsContainer.appendChild(commentsUserComment);
 
@@ -82,6 +87,55 @@ const commentsContent = comments.forEach(function displayComments(item) {
   commentsDivider.classList.add("comments__divider");
 
   commentsPosted.appendChild(commentsDivider);
-});
 
-console.log(commentsPosted);
+  return listedCommentsSection;
+};
+
+const displayComments = (comments) => {
+  comments.forEach((comment) => {
+    const commentsData = comment;
+    console.log("Comments Data: ", commentsData);
+
+    const commentsSection = commentsOutline(commentsData);
+    console.log("Comments Section: ", commentsSection);
+
+    commentsPosted.appendChild(commentsSection);
+  });
+};
+
+displayComments(comments);
+
+//On submit event
+
+const commentsForm = document.querySelector(".comments__form");
+// console.log(commentsForm);
+
+commentsForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  // console.log(event.target);
+
+  //prints to console
+  const nameInsert = event.target.name.value;
+  console.log(nameInsert);
+  const commentInsert = event.target.comment.value;
+  console.log(commentInsert);
+
+  //validate errors
+
+  //new comment
+
+  let newComment = {
+    name: nameInsert,
+    date: new Date(Date.now()),
+    comment: commentInsert,
+    img: "",
+  };
+
+  comments.unshift(newComment);
+
+  const clearComments = document.querySelector(".comments__posted");
+  clearComments.innerHTML = "";
+
+  displayComments(comments);
+});

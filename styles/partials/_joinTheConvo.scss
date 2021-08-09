@@ -37,7 +37,6 @@
   &__form {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid #afafaf;
     margin: 0 0.75rem;
 
     @include tablet {
@@ -53,7 +52,7 @@
   &__name {
     color: #afafaf;
     font-size: 0.625rem;
-    margin-left: 4rem;
+    margin-left: 3.5rem;
     margin-bottom: 0.25rem;
 
     @include tablet {
@@ -98,7 +97,7 @@
   &__comment {
     color: #afafaf;
     font-size: 0.625rem;
-    margin-left: 4rem;
+    margin-left: 3.5rem;
     margin-bottom: 0.25rem;
 
     @include tablet {
