@@ -12,6 +12,7 @@
   }
 }
 
+//for textarea outline when focused
 @mixin textOutline {
   outline: none !important;
   border: 1px solid black;

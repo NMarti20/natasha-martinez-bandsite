@@ -121,7 +121,7 @@ commentsForm.addEventListener("submit", (event) => {
   const commentInsert = event.target.comment.value;
   console.log(commentInsert);
 
-  //validate errors, doesn't post while empty
+  //validate errors, doesn't post while empty and reset when inputted
   if (nameInsert === "") {
     event.target.name.classList.add("comments__validate");
 
@@ -149,7 +149,7 @@ commentsForm.addEventListener("submit", (event) => {
     "/" +
     new Date(Date.now()).getFullYear();
 
-  //new comment
+  //new comment form
   let newComment = {
     name: nameInsert,
     date: formatDate,
