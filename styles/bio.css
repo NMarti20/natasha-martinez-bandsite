@@ -103,7 +103,7 @@
   font-weight: 700;
   border-bottom: 4px solid white;
   width: 100%;
-  padding: 1rem 0 1.5rem 0;
+  padding: 0 0 1rem 0;
 }
 .nav__link:hover {
   border-bottom: 4px solid #fff;
@@ -118,23 +118,22 @@
   font-weight: 400;
   border-bottom: 4px solid white;
   width: 100%;
-  padding: 0 0 0.6rem 0;
+  padding: 0 0 1rem 0;
 }
 @media (min-width: 768px) {
   .nav__link--first {
-    padding: 1rem 0 1.4rem 0;
+    padding: 0.4rem 0 1.3rem 0;
     border-bottom: 3px solid white;
-    margin-top: 0.4rem;
   }
 }
 
 .nav__link--second {
-  padding: 0 0 1.2rem 0;
+  padding: 0 0 1rem 0;
   color: #afafaf;
 }
 @media (min-width: 768px) {
   .nav__link--second {
-    padding: 1.2rem 0 1.2rem 0;
+    padding: 0.4rem 0 1.3rem 0;
   }
 }
 
@@ -587,37 +586,30 @@ iframe {
 }
 .comments__comment-insert::-moz-placeholder {
   color: #323232;
-  padding-top: 0.5rem;
-  padding-left: 0.5rem;
+  padding: 0.5rem 0 0 0.5rem;
 }
 .comments__comment-insert:-ms-input-placeholder {
   color: #323232;
-  padding-top: 0.5rem;
-  padding-left: 0.5rem;
+  padding: 0.5rem 0 0 0.5rem;
 }
 .comments__comment-insert::placeholder {
   color: #323232;
-  padding-top: 0.5rem;
-  padding-left: 0.5rem;
+  padding: 0.5rem 0 0 0.5rem;
 }
 @media (min-width: 768px) {
   .comments__comment-insert::-moz-placeholder {
-    padding-top: 1rem;
-    padding-left: 1rem;
+    padding: 1rem 0 0 1rem;
   }
   .comments__comment-insert:-ms-input-placeholder {
-    padding-top: 1rem;
-    padding-left: 1rem;
+    padding: 1rem 0 0 1rem;
   }
   .comments__comment-insert::placeholder {
-    padding-top: 1rem;
-    padding-left: 1rem;
+    padding: 1rem 0 0 1rem;
   }
 }
 .comments__btn {
   width: 80%;
-  margin-left: 3.5rem;
-  margin-bottom: 1.5rem;
+  margin: 0 0 1.5rem 3.5rem;
   height: 2.35rem;
   color: #fff;
   font-size: 0.9rem;

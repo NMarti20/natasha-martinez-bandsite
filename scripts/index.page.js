@@ -123,17 +123,19 @@ commentsForm.addEventListener("submit", (event) => {
 
   //validate errors, doesn't post while empty
   if (nameInsert === "") {
-    const textValidate = document.querySelector(".comments__name-insert");
-    textValidate.classList.add("comments__validate");
+    event.target.name.classList.add("comments__validate");
 
     return false;
+  } else {
+    event.target.name.classList.remove("comments__validate");
   }
 
   if (commentInsert === "") {
-    const textValidate = document.querySelector(".comments__comment-insert");
-    textValidate.classList.add("comments__validate");
+    event.target.comment.classList.add("comments__validate");
 
     return false;
+  } else {
+    event.target.comment.classList.remove("comments__validate");
   }
 
   // grab current date
@@ -156,6 +158,8 @@ commentsForm.addEventListener("submit", (event) => {
   };
 
   comments.unshift(newComment);
+
+  event.target.reset();
 
   const clearComments = document.querySelector(".comments__posted");
   clearComments.innerHTML = "";
