@@ -35,7 +35,7 @@ let shows = [
 
 /*
 
-<!---------------SHOWS SECTION---------------->
+<!---------------SHOWS SECTION------------------>
 
 <article class = 'shows'>
 
