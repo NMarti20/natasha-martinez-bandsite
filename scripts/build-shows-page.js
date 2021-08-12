@@ -10,7 +10,14 @@ axios
 
   .then((response) => {
 
-    displayShows(response.data);
+    // displayShows(response.data);
+
+    response.data.forEach(entry => {
+      shows.push(entry);
+    })
+    
+    displayShows(shows);
+    
 
     // console.log("=jeejej:", response.data);
   })};

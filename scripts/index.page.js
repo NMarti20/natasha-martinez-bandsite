@@ -40,7 +40,7 @@ const newComments = (postedData) => {
     .then((renderedComments) => {
       // comments.push(response.data);
       // displayNewComments(renderedComments.data);
-      comments;
+    displayNewComments();
     })
     .catch(e => {
       console.error('error:', e);
@@ -200,8 +200,8 @@ commentsForm.addEventListener("submit", (event) => {
     // img: "",
   };
 
-  console.log("new: ", newComment);
-  comments.unshift(newComment);
+  // console.log("new: ", newComment);
+  // comments.unshift(newComment);
 
   const clearComments = document.querySelector(".comments__posted");
   clearComments.innerHTML = "";
