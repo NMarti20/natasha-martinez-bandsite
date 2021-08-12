@@ -18,8 +18,6 @@ axios
     
     displayShows(shows);
     
-
-    // console.log("=jeejej:", response.data);
   })};
 
 displayShowsList();

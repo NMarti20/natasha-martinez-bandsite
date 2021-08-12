@@ -16,11 +16,11 @@ response.data.forEach(entry => {
 })
 
 displayComments(comments);
-// console.log('COM: ' , comments)
 
   });
 }
 
+//displays comment html first load
 displayNewComments();
 
 
@@ -37,7 +37,7 @@ const newComments = (postedData) => {
       }
     
     )
-    .then((renderedComments) => {
+    .then((renComments) => {
       // comments.push(response.data);
       // displayNewComments(renderedComments.data);
     displayNewComments();
@@ -115,8 +115,8 @@ const commentsOutline = (commentsData) => {
   return listedCommentsSection;
 };
 
-// convert to date
 
+// convert to date
 
 function formattedDate(timeDate){
   let dateObj = new Date (timeDate);
@@ -128,9 +128,7 @@ function formattedDate(timeDate){
   // console.log(month, date, year)
   // console.log('date obj: ', dateObj)
   // console.log('timestamp: ', typeof timestamp);
-  return  + month   +'/' + date + '/' +   year;
-
-  
+  return  + month   + '/' + date + '/' +   year;
   }
 
 
@@ -181,23 +179,10 @@ commentsForm.addEventListener("submit", (event) => {
     event.target.comment.classList.remove("comments__validate");
   }
 
-  // grab current date
-
-  // let formatDate =
-  //   "0" +
-  //   new Date(Date.now()).getMonth() +
-  //   "/" +
-  //   "0" +
-  //   new Date(Date.now()).getDate() +
-  //   "/" +
-  //   new Date(Date.now()).getFullYear();
-
   //new comment form
   let newComment = {
     name: nameInsert,
-    // date: formatDate,
     comment: commentInsert,
-    // img: "",
   };
 
   // console.log("new: ", newComment);
