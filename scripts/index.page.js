@@ -1,44 +1,54 @@
-const apiKey =
-  "https://project-1-api.herokuapp.com/?api_key=5c5a5b4f-bd76-4c51-bbb6-fb014770cbcf";
+let apiKeyComments =
+  "https://project-1-api.herokuapp.com/comments?api_key=5c5a5b4f-bd76-4c51-bbb6-fb014770cbcf";
 
-const comments = [];
+let comments = [];
 
-axios
-  .get(
-    "https://project-1-api.herokuapp.com/comments?api_key=5c5a5b4f-bd76-4c51-bbb6-fb014770cbcf"
-  )
-  .then((response) => {
-    console.log(response);
-    displayComments(response.data);
+console.log('COMMENTS ARRAY:', comments);
+
+//GET
+function displayNewComments() {
+  axios.get(apiKeyComments).then((response) => {
+    // console.log("response:", displayComments(response.data));
+
+//trying to insert into comments array
+response.data.forEach(entry => {
+  comments.unshift(entry);
+})
+
+displayComments(comments);
+// console.log('COM: ' , comments)
+
   });
+}
 
-// let comments = [
-//   {
-//     name: "Connor Walton",
-//     date: "02/17/2021",
-//     comment:
-//       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-//     image: "../",
-//   },
+displayNewComments();
 
-//   {
-//     name: "Emilie Beach",
-//     date: "01/09/2021",
-//     comment:
-//       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
 
-//     image: "",
-//   },
-//   {
-//     name: "Miles Acosta",
-//     date: "12/20/2020",
-//     comment:
-//       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-//     image: "",
+//POST 
+const newComments = (postedData) => {
+  console.log("posted:", postedData);
+  axios
+    .post(
+      apiKeyComments, 
+      {
+        "name": postedData.name,
 
-//     //"../assets/images/Mohan-muruge.jpg",
-//   },
-// ];
+        "comment": postedData.comment
+      }
+    
+    )
+    .then((renderedComments) => {
+      // comments.push(response.data);
+      // displayNewComments(renderedComments.data);
+      comments;
+    })
+    .catch(e => {
+      console.error('error:', e);
+    });
+};
+
+
+//DOM OUTLINE
 
 const commentsPosted = document.querySelector(".comments__posted");
 
@@ -85,7 +95,7 @@ const commentsOutline = (commentsData) => {
   //create date
   const commentsDatePosted = document.createElement("p");
   commentsDatePosted.classList.add("comments__date-posted");
-  commentsDatePosted.innerText = commentsData.date;
+  commentsDatePosted.innerText = formattedDate(commentsData.timestamp);
 
   nameDateContainer.appendChild(commentsDatePosted);
 
@@ -105,6 +115,25 @@ const commentsOutline = (commentsData) => {
   return listedCommentsSection;
 };
 
+// convert to date
+
+
+function formattedDate(timeDate){
+  let dateObj = new Date (timeDate);
+  // console.log('timestamp:' , timeDate)
+  let month = dateObj.getMonth() + 1;
+  let date = dateObj.getDate();
+  let year = dateObj.getFullYear();
+  
+  // console.log(month, date, year)
+  // console.log('date obj: ', dateObj)
+  // console.log('timestamp: ', typeof timestamp);
+  return  + month   +'/' + date + '/' +   year;
+
+  
+  }
+
+
 const displayComments = (comments) => {
   comments.forEach((comment) => {
     const commentsData = comment;
@@ -117,7 +146,7 @@ const displayComments = (comments) => {
   });
 };
 
-displayComments(comments);
+// displayComments(comments);
 
 //On submit event
 
@@ -131,9 +160,9 @@ commentsForm.addEventListener("submit", (event) => {
 
   //prints to console
   const nameInsert = event.target.name.value;
-  console.log(nameInsert);
+  // console.log(nameInsert);
   const commentInsert = event.target.comment.value;
-  console.log(commentInsert);
+  // console.log(commentInsert);
 
   //validate errors, doesn't post while empty and reset when inputted
   if (nameInsert === "") {
@@ -154,29 +183,30 @@ commentsForm.addEventListener("submit", (event) => {
 
   // grab current date
 
-  let formatDate =
-    "0" +
-    new Date(Date.now()).getMonth() +
-    "/" +
-    "0" +
-    new Date(Date.now()).getDate() +
-    "/" +
-    new Date(Date.now()).getFullYear();
+  // let formatDate =
+  //   "0" +
+  //   new Date(Date.now()).getMonth() +
+  //   "/" +
+  //   "0" +
+  //   new Date(Date.now()).getDate() +
+  //   "/" +
+  //   new Date(Date.now()).getFullYear();
 
   //new comment form
   let newComment = {
     name: nameInsert,
-    date: formatDate,
+    // date: formatDate,
     comment: commentInsert,
-    img: "",
+    // img: "",
   };
 
+  console.log("new: ", newComment);
   comments.unshift(newComment);
-
-  event.target.reset();
 
   const clearComments = document.querySelector(".comments__posted");
   clearComments.innerHTML = "";
+  event.target.reset();
 
-  displayComments(comments);
+  // displayComments(comments);
+  newComments(newComment);
 });
