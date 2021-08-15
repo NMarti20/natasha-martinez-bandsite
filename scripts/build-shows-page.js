@@ -9,9 +9,7 @@ axios
   .get(apiKeyShows)
 
   .then((response) => {
-
     // displayShows(response.data);
-
     response.data.forEach(entry => {
       shows.push(entry);
     })
