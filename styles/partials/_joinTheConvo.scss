@@ -72,6 +72,7 @@
     border-color: #e1e1e1;
     border-radius: 4px;
     resize: none;
+    border-style:solid;
 
     @include tablet {
       height: 3rem;
@@ -123,6 +124,7 @@
     border-color: #e1e1e1;
     border-radius: 4px;
     resize: none;
+    border-style:solid;
 
     @include tablet {
       height: 6rem;
@@ -144,7 +146,7 @@
     padding: 0.5rem 0 0 0.5rem;
 
     @include tablet {
-      padding: 1rem 0 0 1rem;
+      padding: 0 0 0 1rem;
     }
   }
 
