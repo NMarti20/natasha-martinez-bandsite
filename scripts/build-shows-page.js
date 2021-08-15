@@ -116,7 +116,7 @@ const showsOutline = (showsData) => {
   btn.classList.add("shows__btn");
   btn.innerText = "BUY TICKETS";
   btn.addEventListener("click", () => {
-    console.log(showsData.venue);
+    console.log(showsData.place);
     console.log(showsData.location);
   });
 
