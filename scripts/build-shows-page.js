@@ -148,10 +148,6 @@ function formattedDate(timestamp){
 
 let dateObj = new Date (Number(timestamp));
 
-
-// console.log('date obj: ', dateObj)
-// console.log('timestamp: ', typeof timestamp);
-
 console.log( dateObj)
 
 var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun",

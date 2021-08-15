@@ -8,7 +8,7 @@ console.log('COMMENTS ARRAY:', comments);
 //GET
 function displayNewComments() {
   axios.get(apiKeyComments).then((response) => {
-    // console.log("response:", displayComments(response.data));
+
 
 //trying to insert into comments array
 response.data.forEach(entry => {
@@ -38,8 +38,6 @@ const newComments = (postedData) => {
     
     )
     .then((renComments) => {
-      // comments.push(response.data);
-      // displayNewComments(renderedComments.data);
     displayNewComments();
     })
     .catch(e => {
@@ -120,14 +118,12 @@ const commentsOutline = (commentsData) => {
 
 function formattedDate(timeDate){
   let dateObj = new Date (timeDate);
-  // console.log('timestamp:' , timeDate)
+
   let month = dateObj.getMonth() + 1;
   let date = dateObj.getDate();
   let year = dateObj.getFullYear();
   
-  // console.log(month, date, year)
-  // console.log('date obj: ', dateObj)
-  // console.log('timestamp: ', typeof timestamp);
+
   return  + month   + '/' + date + '/' +   year;
   }
 
@@ -144,23 +140,23 @@ const displayComments = (comments) => {
   });
 };
 
-// displayComments(comments);
+
 
 //On submit event
 
 const commentsForm = document.querySelector(".comments__form");
-// console.log(commentsForm);
+
 
 commentsForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  // console.log(event.target);
+;
 
   //prints to console
   const nameInsert = event.target.name.value;
-  // console.log(nameInsert);
+
   const commentInsert = event.target.comment.value;
-  // console.log(commentInsert);
+
 
   //validate errors, doesn't post while empty and reset when inputted
   if (nameInsert === "") {
@@ -185,13 +181,9 @@ commentsForm.addEventListener("submit", (event) => {
     comment: commentInsert,
   };
 
-  // console.log("new: ", newComment);
-  // comments.unshift(newComment);
-
   const clearComments = document.querySelector(".comments__posted");
   clearComments.innerHTML = "";
   event.target.reset();
 
-  // displayComments(comments);
   newComments(newComment);
 });
