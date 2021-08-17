@@ -1,50 +1,35 @@
 let apiKeyComments =
   "https://project-1-api.herokuapp.com/comments?api_key=5c5a5b4f-bd76-4c51-bbb6-fb014770cbcf";
 
-let comments = [];
-
-console.log('COMMENTS ARRAY:', comments);
-
 //GET
 function displayNewComments() {
   axios.get(apiKeyComments).then((response) => {
-
-
-//trying to insert into comments array
-response.data.forEach(entry => {
-  comments.unshift(entry);
-})
-
-displayComments(comments);
-
+    const sortedComments = response.data.sort((com1, com2) => {
+      return com2.timestamp - com1.timestamp;
+    });
+    displayComments(sortedComments);
   });
 }
 
 //displays comment html first load
 displayNewComments();
 
-
-//POST 
+//POST
 const newComments = (postedData) => {
   console.log("posted:", postedData);
   axios
-    .post(
-      apiKeyComments, 
-      {
-        "name": postedData.name,
+    .post(apiKeyComments, {
+      name: postedData.name,
 
-        "comment": postedData.comment
-      }
-    
-    )
-    .then((renComments) => {
-    displayNewComments();
+      comment: postedData.comment,
     })
-    .catch(e => {
-      console.error('error:', e);
+    .then((renComments) => {
+      displayNewComments();
+    })
+    .catch((e) => {
+      console.error("error:", e);
     });
 };
-
 
 //DOM OUTLINE
 
@@ -113,50 +98,29 @@ const commentsOutline = (commentsData) => {
   return listedCommentsSection;
 };
 
-
 // convert to date
 
-function formattedDate(timeDate){
-  let dateObj = new Date (timeDate);
+function formattedDate(timeDate) {
+  let dateObj = new Date(timeDate);
 
   let month = dateObj.getMonth() + 1;
   let date = dateObj.getDate();
   let year = dateObj.getFullYear();
-  
 
-  return  + month   + '/' + date + '/' +   year;
-  }
-
-
-const displayComments = (comments) => {
-  comments.forEach((comment) => {
-    const commentsData = comment;
-    console.log("Comments Data: ", commentsData);
-
-    const commentsSection = commentsOutline(commentsData);
-    console.log("Comments Section: ", commentsSection);
-
-    commentsPosted.appendChild(commentsSection);
-  });
-};
-
-
+  return +month + "/" + date + "/" + year;
+}
 
 //On submit event
 
 const commentsForm = document.querySelector(".comments__form");
 
-
 commentsForm.addEventListener("submit", (event) => {
   event.preventDefault();
-
-;
 
   //prints to console
   const nameInsert = event.target.name.value;
 
   const commentInsert = event.target.comment.value;
-
 
   //validate errors, doesn't post while empty and reset when inputted
   if (nameInsert === "") {
@@ -181,9 +145,20 @@ commentsForm.addEventListener("submit", (event) => {
     comment: commentInsert,
   };
 
-  const clearComments = document.querySelector(".comments__posted");
-  clearComments.innerHTML = "";
-  event.target.reset();
-
   newComments(newComment);
 });
+
+function displayComments(comments) {
+  const clearComments = document.querySelector(".comments__posted");
+  clearComments.innerHTML = "";
+
+  comments.forEach((comment) => {
+    const commentsData = comment;
+    console.log("Comments Data: ", commentsData);
+
+    const commentsSection = commentsOutline(commentsData);
+    console.log("Comments Section: ", commentsSection);
+
+    commentsPosted.appendChild(commentsSection);
+  });
+}

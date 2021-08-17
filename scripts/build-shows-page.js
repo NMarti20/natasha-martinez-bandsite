@@ -1,31 +1,53 @@
-//create shows array of objects
+//Variables
 
-let apiKeyShows = 'https://project-1-api.herokuapp.com/showdates?api_key=5c5a5b4f-bd76-4c51-bbb6-fb014770cbcf'
-
-let shows = [];
-
-function displayShowsList(){
-axios
-  .get(apiKeyShows)
-
-  .then((response) => {
-    // displayShows(response.data);
-    response.data.forEach(entry => {
-      shows.push(entry);
-    })
-    
-    displayShows(shows);
-    
-  })};
-
-displayShowsList();
-
-
-
-
+let apiKeyShows =
+  "https://project-1-api.herokuapp.com/showdates?api_key=5c5a5b4f-bd76-4c51-bbb6-fb014770cbcf";
 
 const showsList = document.querySelector(".shows");
 
+function displayShowsList() {
+  axios
+    .get(apiKeyShows)
+
+    .then((response) => {
+      displayShows(response.data);
+    });
+}
+
+displayShowsList();
+
+//formatting date
+
+function formattedDate(timestamp) {
+  let dateObj = new Date(Number(timestamp));
+
+  console.log(dateObj);
+
+  var monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  var formattedDate =
+    monthNames[dateObj.getMonth()] +
+    " " +
+    dateObj.getDate() +
+    " " +
+    dateObj.getFullYear();
+  return formattedDate;
+}
+
+//DOM Shows Outline
 
 const showsOutline = (showsData) => {
   //to append showsElement with the main div from HTML
@@ -36,7 +58,6 @@ const showsOutline = (showsData) => {
   showsContainer.classList.add("shows__container");
 
   showsList.appendChild(showsContainer);
-
 
   /**************
    SHOWS DATES
@@ -141,18 +162,3 @@ const displayShows = (shows) => {
     showsList.appendChild(showsSection);
   });
 };
-
-function formattedDate(timestamp){
-
-let dateObj = new Date (Number(timestamp));
-
-console.log( dateObj)
-
-var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
-
-
-var formattedDate = monthNames[dateObj.getMonth()] + ' ' + dateObj.getDate()+ ' '+  dateObj.getFullYear();
-return formattedDate;
-
-}
