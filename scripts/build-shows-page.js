@@ -1,6 +1,4 @@
-//Variables
-
-let apiKeyShows =
+const apiKeyShows =
   "https://project-1-api.herokuapp.com/showdates?api_key=5c5a5b4f-bd76-4c51-bbb6-fb014770cbcf";
 
 const showsList = document.querySelector(".shows");
@@ -19,11 +17,9 @@ displayShowsList();
 //formatting date
 
 function formattedDate(timestamp) {
-  let dateObj = new Date(Number(timestamp));
+  const dateObj = new Date(Number(timestamp));
 
-  console.log(dateObj);
-
-  var monthNames = [
+  const monthNames = [
     "Jan",
     "Feb",
     "Mar",
@@ -38,7 +34,7 @@ function formattedDate(timestamp) {
     "Dec",
   ];
 
-  var formattedDate =
+  const formattedDate =
     monthNames[dateObj.getMonth()] +
     " " +
     dateObj.getDate() +

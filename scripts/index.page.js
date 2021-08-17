@@ -1,4 +1,4 @@
-let apiKeyComments =
+const apiKeyComments =
   "https://project-1-api.herokuapp.com/comments?api_key=5c5a5b4f-bd76-4c51-bbb6-fb014770cbcf";
 
 //GET
@@ -20,7 +20,6 @@ const newComments = (postedData) => {
   axios
     .post(apiKeyComments, {
       name: postedData.name,
-
       comment: postedData.comment,
     })
     .then((renComments) => {
@@ -101,11 +100,11 @@ const commentsOutline = (commentsData) => {
 // convert to date
 
 function formattedDate(timeDate) {
-  let dateObj = new Date(timeDate);
+  const dateObj = new Date(timeDate);
 
-  let month = dateObj.getMonth() + 1;
-  let date = dateObj.getDate();
-  let year = dateObj.getFullYear();
+  const month = dateObj.getMonth() + 1;
+  const date = dateObj.getDate();
+  const year = dateObj.getFullYear();
 
   return +month + "/" + date + "/" + year;
 }
@@ -140,7 +139,7 @@ commentsForm.addEventListener("submit", (event) => {
   }
 
   //new comment form
-  let newComment = {
+  const newComment = {
     name: nameInsert,
     comment: commentInsert,
   };
